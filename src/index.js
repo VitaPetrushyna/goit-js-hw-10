@@ -19,7 +19,7 @@ function onCountrySearch(event) {
   event.preventDefault();
 
   const name = countryInput.value.trim();
-  if (name === ' ') {
+  if (name === '') {
     return (countryList.innerHTML = ''), (countryInfo.innerHTML = '');
   }
 
@@ -46,7 +46,7 @@ function onCountrySearch(event) {
       }
     })
     .catch(error => {
-      if (name !== ' ') {
+      if (name !== '') {
         Notiflix.Notify.failure('Oops, there is no country with that name');
       }
     });
